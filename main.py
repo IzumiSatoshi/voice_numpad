@@ -12,7 +12,7 @@ CHANNELS = 1
 RATE = 44100
 record_time = 10
 output_path = "./temp/output.wav"
-hotkey = "right alt"
+hotkey = "right win"
 is_pressing_hotkey = False
 
 r = sr.Recognizer()
