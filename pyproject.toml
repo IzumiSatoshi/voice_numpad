@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "voice-numpad"
+version = "0.1.0"
+description = ""
+authors = ["IzumiSatoshi <izumisatoshi05@gmail.com>"]
+readme = "README.md"
+packages = [{include = "voice_numpad"}]
+
+[tool.poetry.dependencies]
+python = "<3.12,>=3.7"
+speechrecognition = "^3.9.0"
+pyaudio = "^0.2.13"
+keyboard = "^0.13.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
