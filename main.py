@@ -42,10 +42,10 @@ def main():
         while True:
             if is_pressing_hotkey:
                 audio = record(p)
-                number = recognize(audio)
+                text = recognize(audio)
 
-                if number is not None:
-                    keyboard.write(number)
+                if text is not None:
+                    write(text)
 
             time.sleep(0.1)
 
@@ -102,12 +102,18 @@ def recognize(audio):
             )
         )
 
-    if text is None:
-        return None
+    return text
+
+
+def write(text):
+    # delete everything and type
+    if "D" in text or "d" in text:
+        keyboard.press_and_release("ctrl + a, backspace")
 
     number = re.sub(r"[^0-9]", "", text)
     print("recognized number = ", number)
-    return number
+
+    keyboard.write(number)
 
 
 main()
